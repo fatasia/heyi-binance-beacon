@@ -524,11 +524,13 @@ button.primary {
     grid-column: 1;
     grid-row: 2;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: clamp(20px, 3.2vh, 36px);
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    align-items: start;
+    column-gap: 0;
+    row-gap: 0;
     min-height: 0;
     padding: 24px clamp(56px, 4.5vw, 72px) 20px;
     border-bottom: 0;
@@ -539,9 +541,16 @@ button.primary {
   }
 
   .hero-copy {
+    display: contents;
+  }
+
+  .wordmark-block {
+    grid-column: 1;
+    grid-row: 1;
     position: relative;
     z-index: 2;
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
     text-align: left;
   }
 
@@ -558,6 +567,8 @@ button.primary {
   }
 
   .dedication {
+    grid-column: 1 / -1;
+    grid-row: 2;
     max-width: 520px;
     margin: 0;
     text-align: left;
@@ -565,12 +576,14 @@ button.primary {
   }
 
   .beacon-stage {
+    grid-column: 1;
+    grid-row: 3;
     position: relative;
     right: auto;
     bottom: auto;
     width: min(190px, 24vh);
-    align-self: flex-start;
-    margin: 0 0 0 clamp(88px, 7.5vw, 120px);
+    justify-self: center;
+    margin: clamp(20px, 3.2vh, 36px) 0 0;
   }
 
   .frame-caption {
