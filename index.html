@@ -21,14 +21,14 @@
           TAPEOUT / BNB CHAIN
         </div>
         <div class="header-actions">
-          <div class="chain-mode" id="chainMode" data-mode="demo">
+          <div class="chain-mode" id="chainMode" data-mode="connecting">
             <span class="mode-dot"></span>
-            <strong id="modeLabel">DEMO</strong>
+            <strong id="modeLabel">连接中</strong>
           </div>
           <button class="language-toggle" id="languageButton" type="button" aria-label="Switch language">中文</button>
           <div class="block-clock">
             <span data-i18n="blockSignal">BLOCK SIGNAL</span>
-            <strong id="tickLabel">0000</strong>
+            <strong id="tickLabel">—</strong>
           </div>
         </div>
       </header>
@@ -58,7 +58,7 @@
             <i class="diamond west" data-direction="3"></i>
             <i class="diamond south" data-direction="2"></i>
           </div>
-          <span class="frame-caption" id="frameCaption">H / NORTH</span>
+          <span class="frame-caption" id="frameCaption">等待链上信号</span>
         </div>
       </section>
 
@@ -79,39 +79,67 @@
         <div class="readout-grid">
           <article class="readout ascii-card">
             <span data-i18n="asciiPayload">ASCII PAYLOAD</span>
-            <strong id="asciiHex">0x48</strong>
-            <small id="asciiText">H · HEYI 1/4</small>
+            <strong id="asciiHex">—</strong>
+            <small id="asciiText">WAITING FOR CHAIN</small>
           </article>
           <article class="readout state-card">
             <span data-i18n="activeLetterLabel">ACTIVE LETTER</span>
-            <strong id="activeLetter">H</strong>
-            <small id="directionText">BINANCE DIAMOND / NORTH</small>
+            <strong id="activeLetter">—</strong>
+            <small id="directionText">BINANCE ◆ —</small>
           </article>
           <article class="readout bit-card">
             <span>BYTE 1 / BINANCE</span>
-            <strong id="oneHotBits">0xB1</strong>
+            <strong id="oneHotBits">—</strong>
             <small data-i18n="oneHot">B + ONE-HOT DIRECTION</small>
           </article>
         </div>
 
-        <div class="raw-output">
-          <label for="rawBits" data-i18n="decodeRaw">DECODE RAW OUTPUT</label>
-          <div class="input-row">
-            <input
-              id="rawBits"
-              type="text"
-              inputmode="numeric"
-              autocomplete="off"
-              spellcheck="false"
-              aria-describedby="rawHelp"
-              value="0001001010001101"
-            />
-            <button id="decodeButton" type="button" data-i18n="decode">DECODE</button>
+        <div class="chain-proof" aria-labelledby="proofTitle">
+          <div class="proof-heading">
+            <div>
+              <p class="eyebrow" data-i18n="callReceipt">ON-CHAIN CALL RECEIPT</p>
+              <h3 id="proofTitle" data-i18n="nothingSimulated">Nothing simulated.</h3>
+            </div>
+            <p data-i18n="chainOnly">
+              Every visible frame is returned by a BNB Chain eth_call. If the chain cannot be reached, the signal stops.
+            </p>
           </div>
-          <p id="rawHelp" data-i18n="rawHelp">
-            16 bits: ASCII letter in byte 0; Binance signature B1/B2/B4/B8 in byte 1.
-          </p>
-          <p class="decode-status" id="decodeStatus" role="status"></p>
+
+          <dl class="receipt-grid">
+            <div class="receipt-wide">
+              <dt data-i18n="processorContract">PROCESSOR CONTRACT</dt>
+              <dd><a id="receiptContract" target="_blank" rel="noreferrer">—</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="circuit">CIRCUIT</dt>
+              <dd id="receiptCircuit">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="method">METHOD</dt>
+              <dd id="receiptMethod">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="requestState">REQUEST STATE</dt>
+              <dd id="receiptRequestState">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="returnedState">RETURNED STATE</dt>
+              <dd id="receiptNewState">—</dd>
+            </div>
+            <div class="receipt-output">
+              <dt data-i18n="rawOutput">RAW OUTPUT</dt>
+              <dd id="receiptOutput">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="blockHeight">BLOCK HEIGHT</dt>
+              <dd id="receiptBlock">—</dd>
+            </div>
+            <div class="receipt-wide">
+              <dt data-i18n="rpcSource">RPC SOURCE</dt>
+              <dd id="receiptRpc">—</dd>
+            </div>
+          </dl>
+          <p class="call-status" id="callStatus" role="status">正在连接 BNB Chain…</p>
         </div>
       </section>
 
@@ -128,6 +156,11 @@
             target="_blank"
             rel="noreferrer"
           >0x23745c…FcFA5</a>
+          <a
+            href="https://bscscan.com/tx/0x0b9d3efc9ca7caab9e36ef003c9397cdec2fffb193d736eb6dc636a2faac1410"
+            target="_blank"
+            rel="noreferrer"
+          ><span data-i18n="creationTx">创建交易</span></a>
         </div>
         <p data-i18n-html="footerLine">TO HE YI <b>◆</b> FOREVER ON BNB CHAIN</p>
       </footer>
