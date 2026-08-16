@@ -530,7 +530,7 @@ button.primary {
     justify-content: center;
     gap: clamp(20px, 3.2vh, 36px);
     min-height: 0;
-    padding: 24px 0 20px clamp(56px, 4.5vw, 72px);
+    padding: 24px clamp(56px, 4.5vw, 72px) 20px;
     border-bottom: 0;
   }
 
@@ -569,11 +569,12 @@ button.primary {
     right: auto;
     bottom: auto;
     width: min(190px, 24vh);
+    align-self: center;
     margin: 0;
   }
 
   .frame-caption {
-    bottom: -12px;
+    bottom: -30px;
   }
 
   .signal-panel {
@@ -594,6 +595,12 @@ button.primary {
 
   h2 {
     font-size: clamp(38px, 3.4vw, 56px);
+  }
+
+  html[lang="en"] h2 {
+    white-space: nowrap;
+    font-size: clamp(32px, 2.65vw, 44px);
+    letter-spacing: -0.03em;
   }
 
   .readout {

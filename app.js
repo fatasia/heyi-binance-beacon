@@ -9,7 +9,7 @@ const I18N = {
     blockSignal: "BLOCK SIGNAL", permanentSignal: "A PERMANENT SIGNAL FOR",
     dedication: "Four letters, one circuit.<br />Clocked forever by BNB Chain.",
     liveOutput: "LIVE CIRCUIT OUTPUT", bitsName: "Her name shimmers in the circuit",
-    pause: "PAUSE", play: "PLAY", stepSignal: "STEP SIGNAL",
+    pause: "PAUSE", play: "PLAY", stepSignal: "STEP",
     asciiPayload: "ASCII PAYLOAD", activeLetterLabel: "ACTIVE LETTER",
     oneHot: "B + ONE-HOT DIRECTION",
     callReceipt: "ON-CHAIN CALL RECEIPT", nothingSimulated: "Every pulse, witnessed on-chain",
