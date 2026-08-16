@@ -388,12 +388,31 @@ button.primary {
   letter-spacing: -0.035em;
 }
 
-.proof-heading > p {
+.proof-context > p {
   max-width: 520px;
   margin: 0;
   color: var(--muted);
   font-size: 11px;
   line-height: 1.75;
+}
+
+.proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 12px;
+}
+
+.proof-links a {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.proof-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .receipt-grid {
@@ -504,12 +523,27 @@ button.primary {
   .hero {
     grid-column: 1;
     grid-row: 2;
+    position: relative;
+    display: block;
     min-height: 0;
     padding: 24px 0 20px;
-    grid-template-columns: 1fr;
-    align-content: center;
-    gap: clamp(18px, 2vh, 28px);
     border-bottom: 0;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 7%;
+    bottom: 128px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line) 10%, var(--gold-soft) 72%, transparent);
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    padding-top: clamp(34px, 7vh, 72px);
   }
 
   .hero .eyebrow {
@@ -522,13 +556,16 @@ button.primary {
   }
 
   .dedication {
+    max-width: 350px;
     font-size: clamp(20px, 1.8vw, 29px);
   }
 
   .beacon-stage {
-    width: min(270px, 31vh);
-    justify-self: start;
-    margin-left: clamp(40px, 7vw, 110px);
+    position: absolute;
+    right: 5%;
+    bottom: 28px;
+    width: min(250px, 30vh);
+    margin: 0;
   }
 
   .signal-panel {
@@ -572,6 +609,10 @@ button.primary {
 
   .proof-heading h3 {
     font-size: clamp(26px, 2.2vw, 36px);
+  }
+
+  .proof-links {
+    margin-top: 7px;
   }
 
   .receipt-grid > div {

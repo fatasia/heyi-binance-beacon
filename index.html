@@ -100,9 +100,25 @@
               <p class="eyebrow" data-i18n="callReceipt">ON-CHAIN CALL RECEIPT</p>
               <h3 id="proofTitle" data-i18n="nothingSimulated">Nothing simulated.</h3>
             </div>
-            <p data-i18n="chainOnly">
-              Every visible frame is returned by a BNB Chain eth_call. If the chain cannot be reached, the signal stops.
-            </p>
+            <div class="proof-context">
+              <p data-i18n="chainOnly">
+                Every visible frame is returned by a BNB Chain eth_call. If the chain cannot be reached, the signal stops.
+              </p>
+              <nav class="proof-links" aria-label="On-chain evidence">
+                <a
+                  href="https://tapeout.net/#p/0x23745cf93FA92669590B882b3C6DB0D1329FcFA5"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-i18n="viewCircuit"
+                >VIEW TAPEOUT CIRCUIT #1</a>
+                <a
+                  href="https://bscscan.com/tx/0x0b9d3efc9ca7caab9e36ef003c9397cdec2fffb193d736eb6dc636a2faac1410"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-i18n="viewTransaction"
+                >VIEW BSCSCAN TX</a>
+              </nav>
+            </div>
           </div>
 
           <dl class="receipt-grid">
