@@ -569,8 +569,8 @@ button.primary {
     right: auto;
     bottom: auto;
     width: min(190px, 24vh);
-    align-self: center;
-    margin: 0;
+    align-self: flex-start;
+    margin: 0 0 0 clamp(88px, 7.5vw, 120px);
   }
 
   .frame-caption {
