@@ -1,6 +1,9 @@
 # HE YI × Binance TapeOut circuit
 
 - Target processor: `0x23745cf93FA92669590B882b3C6DB0D1329FcFA5`
+- Circuit ID: `1`
+- Owner: `0xF31C3239106cddfcC6F0EFE0101aC38BF89814D6`
+- Tapeout transaction: `0x0b9d3efc9ca7caab9e36ef003c9397cdec2fffb193d736eb6dc636a2faac1410`
 - Inputs: `0`
 - Outputs: `16`
 - State cells: `2`

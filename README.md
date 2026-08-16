@@ -12,7 +12,7 @@ The page accepts exactly 16 raw output bits and decodes both the ASCII letter an
 
 ## Chain mode
 
-After tapeout, edit `config.js` and replace `circuitId: null` with the minted circuit ID. The page then calls `step(id,state,inputs)` on the target processor through a public BNB Chain RPC. No wallet is required for read-only execution.
+Circuit `#1` is live. The page calls `step(id,state,inputs)` on the target processor through a public BNB Chain RPC. No wallet is required for read-only execution.
 
 The GitHub Pages files themselves are hosted off-chain. The circuit identity, logic and decoded output are sourced from the on-chain processor.
 
