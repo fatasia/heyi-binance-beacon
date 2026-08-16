@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HE YI × Binance Beacon — a permanent on-chain signal rendered from TapeOut circuit output."
+    />
+    <title>HE YI × Binance Beacon</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="trace-field" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="masthead">
+        <div class="protocol-mark">
+          <span class="signal-dot"></span>
+          TAPEOUT / BNB CHAIN
+        </div>
+        <div class="header-actions">
+          <div class="chain-mode" id="chainMode" data-mode="demo">
+            <span class="mode-dot"></span>
+            <strong id="modeLabel">DEMO</strong>
+          </div>
+          <button class="language-toggle" id="languageButton" type="button" aria-label="Switch language">中文</button>
+          <div class="block-clock">
+            <span data-i18n="blockSignal">BLOCK SIGNAL</span>
+            <strong id="tickLabel">0000</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="dedication-title">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="permanentSignal">A PERMANENT SIGNAL FOR</p>
+          <h1 id="dedication-title" aria-label="He Yi">
+            <span data-letter="H">H</span>
+            <span data-letter="E">E</span>
+            <span class="word-gap" aria-hidden="true"></span>
+            <span data-letter="Y">Y</span>
+            <span data-letter="I">I</span>
+          </h1>
+          <p class="dedication" data-i18n-html="dedication">
+            Four letters, one circuit.<br />Clocked forever by BNB Chain.
+          </p>
+        </div>
+
+        <div class="beacon-stage" aria-label="Binance diamond beacon">
+          <div class="orbit orbit-outer"></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="diamond-cluster">
+            <i class="diamond north" data-direction="0"></i>
+            <i class="diamond east" data-direction="1"></i>
+            <i class="diamond center"></i>
+            <i class="diamond west" data-direction="3"></i>
+            <i class="diamond south" data-direction="2"></i>
+          </div>
+          <span class="frame-caption" id="frameCaption">H / NORTH</span>
+        </div>
+      </section>
+
+      <section class="signal-panel" aria-label="Circuit output decoder">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="liveOutput">LIVE CIRCUIT OUTPUT</p>
+            <h2 data-i18n="bitsName">Bits become a name.</h2>
+          </div>
+          <div class="controls">
+            <button class="secondary" id="autoButton" type="button" aria-pressed="true">
+              <span data-i18n="pause">PAUSE</span>
+            </button>
+            <button class="primary" id="stepButton" type="button" data-i18n="stepSignal">STEP SIGNAL</button>
+          </div>
+        </div>
+
+        <div class="readout-grid">
+          <article class="readout ascii-card">
+            <span data-i18n="asciiPayload">ASCII PAYLOAD</span>
+            <strong id="asciiHex">0x48</strong>
+            <small id="asciiText">H · HEYI 1/4</small>
+          </article>
+          <article class="readout state-card">
+            <span data-i18n="activeLetterLabel">ACTIVE LETTER</span>
+            <strong id="activeLetter">H</strong>
+            <small id="directionText">BINANCE DIAMOND / NORTH</small>
+          </article>
+          <article class="readout bit-card">
+            <span>BYTE 1 / BINANCE</span>
+            <strong id="oneHotBits">0xB1</strong>
+            <small data-i18n="oneHot">B + ONE-HOT DIRECTION</small>
+          </article>
+        </div>
+
+        <div class="raw-output">
+          <label for="rawBits" data-i18n="decodeRaw">DECODE RAW OUTPUT</label>
+          <div class="input-row">
+            <input
+              id="rawBits"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="rawHelp"
+              value="0001001010001101"
+            />
+            <button id="decodeButton" type="button" data-i18n="decode">DECODE</button>
+          </div>
+          <p id="rawHelp" data-i18n="rawHelp">
+            16 bits: ASCII letter in byte 0; Binance signature B1/B2/B4/B8 in byte 1.
+          </p>
+          <p class="decode-status" id="decodeStatus" role="status"></p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <span data-i18n="targetProcessor">TARGET PROCESSOR</span>
+          <a
+            href="https://bscscan.com/address/0x23745cf93FA92669590B882b3C6DB0D1329FcFA5"
+            target="_blank"
+            rel="noreferrer"
+          >0x23745c…FcFA5</a>
+        </div>
+        <p data-i18n-html="footerLine">TO HE YI <b>◆</b> FOREVER ON BNB CHAIN</p>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.15.0/dist/ethers.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
