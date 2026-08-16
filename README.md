@@ -16,6 +16,8 @@ After tapeout, edit `config.js` and replace `circuitId: null` with the minted ci
 
 The GitHub Pages files themselves are hosted off-chain. The circuit identity, logic and decoded output are sourced from the on-chain processor.
 
+The verified circuit specification and full netlist are archived in [`CIRCUIT.md`](./CIRCUIT.md).
+
 ## Run locally
 
 Serve this directory with any static HTTP server and open `index.html`.
