@@ -530,7 +530,7 @@ button.primary {
     justify-content: center;
     gap: clamp(18px, 2.4vh, 26px);
     min-height: 0;
-    padding: 24px 0 20px clamp(44px, 4.5vw, 72px);
+    padding: 24px 0 20px clamp(56px, 4.5vw, 72px);
     border-bottom: 0;
   }
 
@@ -569,7 +569,7 @@ button.primary {
     right: auto;
     bottom: auto;
     width: min(190px, 24vh);
-    margin: 0 0 0 clamp(82px, 8vw, 132px);
+    margin: 0;
   }
 
   .frame-caption {
@@ -610,13 +610,13 @@ button.primary {
   }
 
   .proof-heading {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 22px;
     margin-bottom: 14px;
   }
 
   .proof-heading h3 {
-    font-size: clamp(26px, 2.2vw, 36px);
+    font-size: clamp(24px, 1.75vw, 29px);
   }
 
   .proof-links {
